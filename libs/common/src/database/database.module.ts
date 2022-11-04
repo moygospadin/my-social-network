@@ -9,6 +9,8 @@ import { MongooseModule } from '@nestjs/mongoose';
         console.log('mongodb uri,', configService.get<string>('MONGODB_URI'));
         return {
           uri: configService.get<string>('MONGODB_URI'),
+
+          useUnifiedTopology: true,
         };
       },
       inject: [ConfigService],
